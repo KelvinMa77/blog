@@ -9,6 +9,13 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <style>
+    .app-name-link img {
+      width: 110px;
+      height: 100px;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,9 +30,20 @@
       distractionFreeMode: false
     }
     window.$docsify = {
-      name: '',
-      repo: '',
+      name: '<span style="font-size:32px;font-weight:700;">小马</span> <span style="font-size:36px;font-weight:700;">Kelvin</span><div><img src="./_media/罗.jfif"/></div><div style="font-size:20px;">欢迎光临</div>',
+      repo: 'KelvinMa77/blog',
       loadNavbar: true,
+      coverpage: true,
+      loadSidebar: true,
+      auto2top: true,
+      themeColor: '#3F51B5',
+      // autoHeader: true,
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 Type to search ',
+        noData: '😞 No Results! ',
+        depth: 3
+      },
       plugins: [
         // 评论会自动同步成为项目的issue, //这些代码是给issue添加lable以及更改样式 //我的博客是取每个路由地址的第一级目录名称作为label，你可以自己操作路径// ，自己自定义
         function (hook, vm) {
@@ -68,6 +86,11 @@
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
 </body>
 
 </html>
