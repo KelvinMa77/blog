@@ -8,6 +8,7 @@
   <meta name="description" content="Description">
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" href="_media/终极蜘蛛侠.ico">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
   <style>
@@ -22,8 +23,8 @@
   <div id="app"></div>
   <script>
     var gitalkConfig = {
-      clientID: '31d9244dc260610293b8', //上面生成的clientID
-      clientSecret: '80f6ee62359e015effd56f4bffa2dcc0065b6b34', //上面生成的clientSecret
+      clientID: 'a3321cadaed0e2ca9de6', //上面生成的clientID
+      clientSecret: '279287444356318679f9733a1eb1892bad8a4e7d', //上面生成的clientSecret
       repo: 'blog', //Github博客项目名
       owner: 'KelvinMa77', //github用户名
       admin: ['KelvinMa77'], //github用户名，可以添加多个
@@ -45,12 +46,14 @@
         depth: 3
       },
       plugins: [
-        // 评论会自动同步成为项目的issue, //这些代码是给issue添加lable以及更改样式 //我的博客是取每个路由地址的第一级目录名称作为label，你可以自己操作路径// ，自己自定义
         function (hook, vm) {
           hook.doneEach(function () {
+            // parse twemoji
+            twemoji.parse(document);
             var label = '',
               domObj, main, divEle, gitalk;
             var labels = vm.route.path.split('/');
+            // if(labels && labels.startsWith('')
             if (labels.length) {
               for (let i = 0; i < labels.length; i++) {
                 var v = labels[i]
@@ -60,8 +63,12 @@
                 }
               }
             }
+
+            console.log('vm', vm)
+            console.log('label', label)
             domObj = Docsify.dom;
             main = domObj.getNode("#main");
+
             Array.apply(
               null,
               document.querySelectorAll("div.gitalk-container")
@@ -86,11 +93,13 @@
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/vuep/dist/vuep.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
   <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
 </body>
 
 </html>
