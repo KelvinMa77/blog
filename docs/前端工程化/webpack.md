@@ -12,55 +12,37 @@ webpack只能处理js文件，若要处理非js文件，则需要通过一些 `l
 
 `chunk` 是webpack 4 的`Code Splitting` 产物，抛弃了webpack3的`CommonsChunkPlugin`,它最大的特点就是配置简单，当你设置 `mode` 是 `production`，那么 webpack 4 就会自动开启 `Code Splitting`，可以完成将某些公共模块去重，打包成一个单独的`chunk`。
 
-## entry
+### entry
 
 用来指定构建入口
 
-## output
+### output
 
 包含 `filename` 和 `path` 两个字段
 
-### 		filename
+* filename - 输出文件名
 
-​		输出文件名
+* path -	​输出路径	
 
-### 		path
-
-​		输出路径	
-
-## rules
+### rules
 
 对象数组
 
 对象中包含以下属性 :
 
-### 	test
+* test - 值为正则，用来匹配希望被找到的文件类型的后缀
 
-​		值为正则，用来匹配希望被找到的文件类型的后缀
+* includes - 值为路径，用来指定在哪些文件夹下需要去找指定后缀的文件
 
-### 	includes
+* use - 对象，包含以下属性：
+    - loader - 指定使用的loader
+    - options - loader的选项
 
-​		值为路径，用来指定在哪些文件夹下需要去找指定后缀的文件
-
-### 	use
-
-​		对象
-
-​		use对象下包含以下属性 ：
-
-#### 		loader
-
-​			指定使用的loader
-
-		#### 		options
-
-​			loader的选项
-
-## plugin
+### plugin
 
 需要先安装插件之后，再来添加对应的字段。
 
-## mode
+### mode
 
 可选值为：`development` , `production` , `none`
 

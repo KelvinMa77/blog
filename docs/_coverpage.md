@@ -1,4 +1,4 @@
-![logo](_media/Coconut.svg)
+![logo](_media/coding.svg)
 
 # <span style="font-weight:700">前端妙妙屋<span>
 > 记录自己的前端成长之路，不定期更新
