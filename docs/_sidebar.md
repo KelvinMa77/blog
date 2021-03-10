@@ -6,6 +6,7 @@
 
 * JavaScript
     * [基础](/javascript/base.md)
+    * [闭包](/javascript/闭包.md)
 
 * 网络
     * [从浏览器地址输入url到显示页面的步骤](/http/url.md)
