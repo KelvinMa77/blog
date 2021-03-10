@@ -8,6 +8,7 @@
     * [基础](/javascript/基础.md)
     * [闭包](/javascript/闭包.md)
     * [原型和原型链](/javascript/原型和原型链.md)
+    * [Promise](/javascript/promise.md)
 
 * 网络
     * [从浏览器地址输入url到显示页面的步骤](/http/url.md)
